@@ -10,6 +10,8 @@
 >
 > По той же причине несколько антивирусов на VirusTotal реагируют на файл: они настороженно относятся к любым новым программам без подписи. [Результаты проверки](https://www.virustotal.com/gui/file/a0d43044c591909e428eacd7608519f0ddc8e166c298491ef80e0c09825264d3). Контрольная сумма SHA-256 — в описании релиза.
 
+Также на [Nexus Mods](https://www.nexusmods.com/witcher3/mods/13209) — для The Witcher 3.
+
 ## Зачем это нужно
 
 Когда DualSense подключён к ПК по Bluetooth, игры не могут использовать его полностью: нет HD-вибрации, не работает динамик, а некоторые игры вообще не распознают геймпад. По проводу всё работает, но играть с кабелем неудобно.
@@ -84,6 +86,8 @@ A wireless DualSense on PC with everything it can do: HD haptics, adaptive trigg
 > The installer isn't signed: code-signing certificates cost money, and this is a free project I work on alone. So on first launch Windows will show a blue "Windows protected your PC" window. Click **More info**, then **Run anyway**.
 >
 > For the same reason, a few antivirus engines on VirusTotal flag the file: they're wary of any new unsigned program. [Scan results](https://www.virustotal.com/gui/file/a0d43044c591909e428eacd7608519f0ddc8e166c298491ef80e0c09825264d3). The SHA-256 checksum is in the release notes.
+
+Also on [Nexus Mods](https://www.nexusmods.com/witcher3/mods/13209) for The Witcher 3.
 
 ### Why you need it
 
