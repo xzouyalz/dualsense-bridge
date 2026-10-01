@@ -2,133 +2,150 @@
 
 [English below](#english)
 
-Играй на DualSense по Bluetooth так, будто он подключён проводом: с HD-вибрацией, адаптивными триггерами и звуком из динамика геймпада.
+Беспроводной DualSense на ПК со всеми возможностями: HD-вибрацией, адаптивными триггерами и динамиком.
 
-> **Windows может испугаться установщика — это нормально.**
-> Я делаю мост один, и платная подпись кода мне пока не по карману. Поэтому при запуске SmartScreen покажет синее окно «Windows защитила ваш компьютер». Нажми **«Подробнее» → «Выполнить в любом случае»**.
-> Пара антивирусов на VirusTotal тоже может отметить установщик: так их эвристика реагирует на любые новые неподписанные программы. Результат проверки: [VirusTotal](https://www.virustotal.com/gui/file/a0d43044c591909e428eacd7608519f0ddc8e166c298491ef80e0c09825264d3). SHA-256 установщика указан в описании релиза.
+> **Про предупреждение Windows**
+>
+> Установщик не подписан: сертификат для подписи стоит денег, а проект я делаю один и бесплатно. Поэтому при первом запуске Windows покажет синее окно «Windows защитила ваш компьютер». Нажми **«Подробнее»**, затем **«Выполнить в любом случае»**.
+>
+> По той же причине несколько антивирусов на VirusTotal реагируют на файл: они настороженно относятся к любым новым программам без подписи. [Результаты проверки](https://www.virustotal.com/gui/file/a0d43044c591909e428eacd7608519f0ddc8e166c298491ef80e0c09825264d3). Контрольная сумма SHA-256 — в описании релиза.
 
-## Зачем это
+## Зачем это нужно
 
-По Bluetooth Windows и игры видят DualSense «урезанным»: нет HD-вибрации, нет звука в динамик геймпада, а часть игр вообще не узнаёт его как DualSense. По проводу всё работает, но провод — это провод.
+Когда DualSense подключён к ПК по Bluetooth, игры не могут использовать его полностью: нет HD-вибрации, не работает динамик, а некоторые игры вообще не распознают геймпад. По проводу всё работает, но играть с кабелем неудобно.
 
-Мост берёт геймпад, подключённый по Bluetooth, и показывает Windows **проводной DualSense**. Игры получают всё, что умеют:
+DualSense Bridge решает эту проблему: для Windows и игр Bluetooth-геймпад выглядит так, будто подключён по USB. В итоге работают:
 
 - подсказки с кнопками PlayStation;
-- подсветку и обычную вибрацию;
+- подсветка и вибрация;
 - адаптивные триггеры;
-- **HD-вибрацию и звук в динамик геймпада** — в играх, которые их поддерживают на ПК.
+- HD-вибрация и динамик геймпада — в играх, которые поддерживают их на ПК.
 
-## Что нужно
+## Что понадобится
 
-- Windows 10 или 11, 64 бита.
-- Bluetooth на компьютере.
-- DualSense, подключённый к компьютеру по Bluetooth.
-- Интернет при установке: установщик скачает два драйвера.
+- Windows 10 или 11 (64-бит).
+- Bluetooth на компьютере и подключённый к нему DualSense.
+- Интернет во время установки: установщик скачает два драйвера.
 
 ## Установка
 
-1. Скачай `DualSenseBridge-Setup-1.0.0.exe` из [релизов](https://github.com/xzouyalz/dualsense-bridge/releases/latest) и запусти.
-2. Если появится SmartScreen — «Подробнее» → «Выполнить в любом случае».
-3. На странице «Параметры» можно включить автозапуск и ярлык на рабочем столе.
-4. Установщик сам скачает и поставит драйверы с их официальных страниц (с проверкой SHA-256):
+1. Скачай `DualSenseBridge-Setup-1.0.0.exe` со [страницы релизов](https://github.com/xzouyalz/dualsense-bridge/releases/latest) и запусти.
+2. Если появится окно SmartScreen — «Подробнее» → «Выполнить в любом случае».
+3. В разделе «Параметры» выбери, нужны ли автозапуск и ярлык на рабочем столе.
+4. Установщик скачает с GitHub и установит два драйвера, проверив их контрольные суммы:
    - [usbip-win2](https://github.com/vadimgrn/usbip-win2) — создаёт виртуальный проводной геймпад;
-   - [HidHide](https://github.com/nefarius/HidHide) — прячет Bluetooth-геймпад от игр, чтобы они видели только один.
-5. При первой установке Windows попросит перезагрузку — драйверам это нужно.
+   - [HidHide](https://github.com/nefarius/HidHide) — скрывает Bluetooth-геймпад от игр, чтобы они не видели его дважды.
+5. В конце понадобится перезагрузка — она нужна драйверам.
 
 ## Как пользоваться
 
-Мост живёт в трее, у часов. Подключи DualSense по Bluetooth — через пару секунд он станет проводным.
+После запуска значок моста появится в трее рядом с часами. Подключи DualSense по Bluetooth — через пару секунд игры будут видеть его как проводной.
 
-В меню значка:
+В меню значка можно:
 
-- геймпады и их заряд (при низком заряде придёт уведомление);
-- **«Мост включён»** — сними галку, и геймпад снова будет обычным Bluetooth;
-- **«Запускать вместе с Windows»**;
-- **«Выключить»**.
+- посмотреть подключённые геймпады и их заряд (при низком заряде придёт уведомление);
+- временно выключить мост — снять галку «Мост включён»;
+- включить или выключить автозапуск;
+- закрыть программу.
 
-**Важно для Steam:** у игр с родной поддержкой DualSense выключи Steam Input (свойства игры → Контроллер), иначе Steam перехватит геймпад и игра не увидит его возможностей.
+**Если играешь через Steam:** для игр со встроенной поддержкой DualSense отключи Steam Input (Свойства игры → Контроллер). Иначе Steam перехватит геймпад, и игра не получит доступ к его функциям.
 
-## Частые вопросы
+## Вопросы и проблемы
 
-**Игра видит два геймпада.** Перезагрузи компьютер после установки: HidHide начинает прятать Bluetooth-геймпад только после перезагрузки.
+**Игра видит два геймпада.** Перезагрузи компьютер: HidHide начинает скрывать Bluetooth-геймпад только после перезагрузки.
 
-**Нет HD-вибрации или звука в динамике.** Эти функции работают только в играх, которые поддерживают их на ПК. Проверь, что Steam Input для игры выключен.
+**Нет HD-вибрации или звука из динамика.** Эти функции поддерживают не все игры на ПК. Также проверь, что Steam Input для игры отключён.
 
-**Как вернуть обычный Bluetooth?** Сними галку «Мост включён» в меню трея или нажми «Выключить».
-
-**Работает с несколькими геймпадами?** Да, каждый подключённый DualSense станет отдельным проводным.
+**Можно подключить несколько геймпадов?** Да, каждый будет работать как отдельный проводной.
 
 ## Удаление
 
-«Параметры → Приложения → DualSense Bridge → Удалить». Галка «Также удалить драйверы» уберёт и usbip-win2 с HidHide — сними её, если они нужны другим программам.
+Параметры Windows → Приложения → DualSense Bridge → Удалить. Если оставить галку «Также удалить драйверы», вместе с мостом удалятся usbip-win2 и HidHide. Сними её, если они нужны другим программам.
 
-## Поддержать
+## Поддержать проект
 
-Мост бесплатный и таким останется. Если он пригодился — можно угостить меня кофе ☕:
+DualSense Bridge бесплатный и останется бесплатным. Если программа пригодилась, буду рад поддержке:
 
 - из России, картой или по СБП: [CloudTips](https://pay.cloudtips.ru/p/49e993e8);
 - из других стран, USDT:
   - сеть TRON (TRC-20): `TTAa8vJfLNVm8H8CKJqebjJeudPgbwGjN2`
   - сеть TON: `UQAQcWMYWpIOwQmBH2rhPTHcp0pVWP_-pl1Dkx2FDBNM81zt`
 
-Если нет — просто расскажи о мосте другу.
+А можно просто рассказать о мосте друзьям — это тоже помогает.
 
 ---
 
 ## English
 
-Play on your DualSense over Bluetooth as if it were plugged in: with HD haptics, adaptive triggers and sound from the controller speaker.
+A wireless DualSense on PC with everything it can do: HD haptics, adaptive triggers and the built-in speaker.
 
-> **Windows may get nervous about the installer — that's expected.**
-> I build the bridge on my own and can't afford a paid code-signing certificate yet, so SmartScreen will show a blue "Windows protected your PC" window. Click **More info → Run anyway**.
-> A couple of antivirus engines on VirusTotal may flag it too: their heuristics react to any new unsigned program. Scan results: [VirusTotal](https://www.virustotal.com/gui/file/a0d43044c591909e428eacd7608519f0ddc8e166c298491ef80e0c09825264d3). The installer's SHA-256 is in the release notes.
+> **About the Windows warning**
+>
+> The installer isn't signed: code-signing certificates cost money, and this is a free project I work on alone. So on first launch Windows will show a blue "Windows protected your PC" window. Click **More info**, then **Run anyway**.
+>
+> For the same reason, a few antivirus engines on VirusTotal flag the file: they're wary of any new unsigned program. [Scan results](https://www.virustotal.com/gui/file/a0d43044c591909e428eacd7608519f0ddc8e166c298491ef80e0c09825264d3). The SHA-256 checksum is in the release notes.
 
-### Why
+### Why you need it
 
-Over Bluetooth, Windows and games get a cut-down DualSense: no HD haptics, no controller speaker, and some games don't recognize it as a DualSense at all. A cable fixes that, but it's a cable.
+With a DualSense connected over Bluetooth, games can't use it fully: no HD haptics, no speaker, and some games don't recognize the controller at all. A cable fixes this, but playing tethered isn't much fun.
 
-The bridge takes your Bluetooth DualSense and presents it to Windows as a **wired DualSense**, so games get everything they support: PlayStation button prompts, lightbar and rumble, adaptive triggers, and **HD haptics and the controller speaker** in games that use them on PC.
+DualSense Bridge makes your Bluetooth controller look like a USB one to Windows and games. As a result, you get:
+
+- PlayStation button prompts;
+- lightbar and rumble;
+- adaptive triggers;
+- HD haptics and the controller speaker in games that support them on PC.
 
 ### Requirements
 
-- Windows 10 or 11, 64-bit.
-- Bluetooth on the PC and a DualSense paired over it.
-- Internet during setup: it downloads two drivers.
+- Windows 10 or 11 (64-bit).
+- Bluetooth on your PC and a DualSense paired to it.
+- An internet connection during setup: it downloads two drivers.
 
-### Setup
+### Installation
 
-1. Download `DualSenseBridge-Setup-1.0.0.exe` from the [releases](https://github.com/xzouyalz/dualsense-bridge/releases/latest) and run it.
-2. If SmartScreen appears: More info → Run anyway.
-3. On the Options page you can turn on start with Windows and a desktop shortcut.
-4. Setup downloads and installs the drivers from their official pages (SHA-256 checked): [usbip-win2](https://github.com/vadimgrn/usbip-win2) for the virtual wired controller and [HidHide](https://github.com/nefarius/HidHide) to hide the Bluetooth one from games.
-5. The first install asks for a restart — the drivers need it.
+1. Download `DualSenseBridge-Setup-1.0.0.exe` from the [releases page](https://github.com/xzouyalz/dualsense-bridge/releases/latest) and run it.
+2. If SmartScreen appears, click More info → Run anyway.
+3. On the Options page, choose whether you want start with Windows and a desktop shortcut.
+4. Setup downloads two drivers from GitHub, verifies their checksums and installs them:
+   - [usbip-win2](https://github.com/vadimgrn/usbip-win2) creates the virtual wired controller;
+   - [HidHide](https://github.com/nefarius/HidHide) hides the Bluetooth controller from games so they don't see it twice.
+5. A restart is needed at the end — the drivers require it.
 
 ### Usage
 
-The bridge lives in the tray by the clock. Connect your DualSense over Bluetooth and it becomes wired in a couple of seconds. The tray menu shows your controllers and their battery, and has **Bridge on**, **Start with Windows** and **Exit**.
+Once running, the bridge icon appears in the system tray next to the clock. Connect your DualSense over Bluetooth, and within a couple of seconds games will see it as wired.
 
-**Steam:** turn Steam Input off for games with native DualSense support, or Steam takes over the controller and the game won't see its features.
+From the tray menu you can:
 
-### FAQ
+- see connected controllers and their battery level (you'll get a notification when it's low);
+- turn the bridge off for a while by unchecking "Bridge on";
+- turn start with Windows on or off;
+- exit the program.
 
-**The game sees two controllers.** Restart Windows after setup: HidHide hides the Bluetooth controller only after a restart.
+**If you play through Steam:** turn off Steam Input for games with native DualSense support (game Properties → Controller). Otherwise Steam takes over the controller and the game can't use its features.
 
-**No HD haptics or speaker sound.** Only games that support them on PC use them. Make sure Steam Input is off for the game.
+### Troubleshooting
 
-**Several controllers?** Yes, each connected DualSense becomes its own wired controller.
+**The game sees two controllers.** Restart your PC: HidHide only starts hiding the Bluetooth controller after a restart.
 
-### Uninstall
+**No HD haptics or speaker sound.** Not every PC game supports these features. Also make sure Steam Input is off for the game.
 
-Settings → Apps → DualSense Bridge → Uninstall. "Also remove drivers" removes usbip-win2 and HidHide too; untick it if other programs need them.
+**Can I use several controllers?** Yes, each one works as a separate wired controller.
 
-### Support
+### Uninstalling
 
-The bridge is free and will stay free. If it's useful to you, you can buy me a coffee ☕:
+Windows Settings → Apps → DualSense Bridge → Uninstall. With "Also remove drivers" checked, usbip-win2 and HidHide are removed along with the bridge. Uncheck it if other programs need them.
+
+### Support the project
+
+DualSense Bridge is free and will stay free. If you find it useful, I'd appreciate your support:
 
 - USDT on TRON (TRC-20): `TTAa8vJfLNVm8H8CKJqebjJeudPgbwGjN2`
 - USDT on TON: `UQAQcWMYWpIOwQmBH2rhPTHcp0pVWP_-pl1Dkx2FDBNM81zt`
 - from Russia: [CloudTips](https://pay.cloudtips.ru/p/49e993e8)
+
+Or just tell your friends about it — that helps too.
 
 ---
 
