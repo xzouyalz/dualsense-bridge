@@ -1,0 +1,34 @@
+DualSense Bridge - license
+==========================
+
+Русский
+-------
+DualSense Bridge — бесплатная программа. Её можно устанавливать и
+использовать на любом количестве компьютеров, в том числе в коммерческих
+целях, и бесплатно делиться неизменённым установщиком.
+
+Нельзя продавать программу или её установщик, выдавать её за свою,
+изменять, декомпилировать или распространять в изменённом виде.
+
+Программа предоставляется «как есть», без каких-либо гарантий. Автор не
+отвечает за любой ущерб, возникший при её использовании.
+
+Сторонние компоненты распространяются по своим лицензиям, см.
+THIRD_PARTY_NOTICES.txt. Драйверы usbip-win2 и HidHide не входят в
+программу: установщик скачивает их с официальных страниц авторов.
+
+English
+-------
+DualSense Bridge is free software (freeware). You may install and use it on
+any number of computers, including for commercial purposes, and share the
+unmodified installer free of charge.
+
+You may not sell the program or its installer, present it as your own, modify
+or decompile it, or distribute modified copies.
+
+The program is provided "as is", without warranty of any kind. The author is
+not liable for any damage arising from its use.
+
+Third-party components are distributed under their own licenses, see
+THIRD_PARTY_NOTICES.txt. The usbip-win2 and HidHide drivers are not part of
+the program: the setup downloads them from their authors' official pages.
