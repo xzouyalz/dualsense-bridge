@@ -10,7 +10,7 @@
 >
 > По той же причине несколько антивирусов на VirusTotal реагируют на файл: они настороженно относятся к любым новым программам без подписи. [Результаты проверки](https://www.virustotal.com/gui/file/a0d43044c591909e428eacd7608519f0ddc8e166c298491ef80e0c09825264d3). Контрольная сумма SHA-256 — в описании релиза.
 
-Также на [Nexus Mods](https://www.nexusmods.com/witcher3/mods/13209) — для The Witcher 3.
+Также на [Nexus Mods](https://www.nexusmods.com/witcher3/mods/13209) — для The Witcher 3. Обсуждение — [тема на 4PDA](https://4pda.to/forum/index.php?showtopic=1127120).
 
 ## Зачем это нужно
 
